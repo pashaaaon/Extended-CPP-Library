@@ -3,14 +3,14 @@
 #include <string>
 
 namespace extd {
-    // Universal Methods
+    // ---------------------------------------------------------------------------- Universal Methods
 
     template<typename T>
     void printArray(std::vector<T> array, std::string splitter = " ") {
         for (T i : array) {std::cout << i << splitter;}
     };
 
-    // String Methods
+    // ---------------------------------------------------------------------------- String Methods
 
     std::vector<std::string> split_string(std::string target_string, std::string splitter, int count = false, bool StartFromEnd = false) {
         using namespace std;
@@ -95,5 +95,31 @@ namespace extd {
         }
 
         return Result;
+    };
+
+    int in_string(std::string target_string, std::string find) {
+        int count = 0;
+
+        for (int i = 0; i<target_string.size(); i+=1) {
+            if (target_string[i] == find[0]) {
+                bool check = true;
+                int j;
+                for (j = 1; j<find.size(); j+=1) {
+                    if (i+j >= target_string.size()) {return count;}
+                    if (target_string[i+j] != find[j]) {check = false; break;}
+                }
+                if (check) {count += 1; i += find.size()-1;}
+            }
+        }
+        return count;
+    };
+
+    int in_string_array(std::vector<std::string> target_array, std::string find) {
+        int count = 0;
+
+        for (std::string i : target_array) {
+            if (i == find) {count += 1;}
+        }
+        return count;
     };
 }
