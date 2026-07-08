@@ -1,2 +1,1 @@
-.vscode/        # ignore vscode configuration
-.test_folder/   # ignore test files folder
+main.cpp
