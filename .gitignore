@@ -1,3 +1,2 @@
-*.exe      # ignore test binaries
-*.cpp      # ignore test cpp files (source code locate in extd.hpp file)
-.vscode/   # ignore vscode configuration
+.vscode/        # ignore vscode configuration
+.test_folder/   # ignore test files folder
