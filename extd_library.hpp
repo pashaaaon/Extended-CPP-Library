@@ -8,7 +8,7 @@ namespace extd {
     template<typename T>
     void printArray(std::vector<T> array, std::string splitter = " ") {
         for (T i : array) {std::cout << i << splitter;}
-    };
+    }
 
     // ---------------------------------------------------------------------------- String Methods
 
@@ -80,7 +80,7 @@ namespace extd {
         }
 
         return Result;
-    };
+    }
 
     std::string remove_suffix(std::string target_string, std::string suffix) {
         if (suffix.size() > target_string.size()) {return target_string;}
@@ -95,7 +95,7 @@ namespace extd {
         }
 
         return Result;
-    };
+    }
 
     int in_string(std::string target_string, std::string find) {
         int count = 0;
@@ -112,7 +112,7 @@ namespace extd {
             }
         }
         return count;
-    };
+    }
 
     int in_string_array(std::vector<std::string> target_array, std::string find) {
         int count = 0;
@@ -121,5 +121,9 @@ namespace extd {
             if (i == find) {count += 1;}
         }
         return count;
-    };
+    }
+
+    std::string remove_from_string(std::string target_string, std::string for_delete, int count, std::string replace = "", bool StartFromEnd = false) {
+
+    }
 }
